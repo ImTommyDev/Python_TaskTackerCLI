@@ -62,7 +62,7 @@ class Task():
                     json.dump(tareas, archivo, indent=4)
                     archivo.truncate() # Elimina el contenido del archivo después de escribir el nuevo contenido
 
-                    return True
+                    return True, self.id 
                     
             except Exception as ex:
                 print(f"Error al añadir la tarea: {ex}")
@@ -85,4 +85,4 @@ class Task():
                 #Añado la tarea al archivo .json
                 json.dump([tarea], archivo, indent=4) #dump convierte el diccionario en un objeto JSON y lo guarda en el archivo .json
                 
-                return True
+                return True, self.id

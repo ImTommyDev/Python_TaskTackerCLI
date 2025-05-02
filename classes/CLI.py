@@ -13,8 +13,10 @@ class CLI(cmd.Cmd):
         """"Añade una tarea."""
         task = Task()
         
-        if task.add_task(descripcion):
-            print(f"Tarea añadida: {descripcion}")
+        creada, id = task.add_task(descripcion)
+        
+        if creada:
+            print(f"Tarea añadida: {descripcion} (ID: {id})")
         else:
             print("Error al añadir la tarea.")
     
