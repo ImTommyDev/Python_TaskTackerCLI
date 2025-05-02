@@ -26,7 +26,7 @@
       "version": 181,
       "versionNonce": 407934827,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1746169161356,
       "link": null,
       "locked": false,
@@ -63,7 +63,7 @@
       "version": 493,
       "versionNonce": 1071939813,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1746169096371,
       "link": null,
       "locked": false,
@@ -100,7 +100,7 @@
       "version": 85,
       "versionNonce": 1058762859,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1746169466633,
       "link": null,
       "locked": false,
@@ -137,7 +137,7 @@
       "version": 79,
       "versionNonce": 256965707,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1746169454459,
       "link": null,
       "locked": false,
@@ -176,7 +176,7 @@
       "version": 63,
       "versionNonce": 917558603,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1746169464761,
       "link": null,
       "locked": false
@@ -204,7 +204,7 @@
       "version": 103,
       "versionNonce": 2060528293,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1746169508778,
       "link": null,
       "locked": false,
@@ -241,7 +241,7 @@
       "version": 70,
       "versionNonce": 942471717,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1746178709625,
       "link": null,
       "locked": false,
@@ -278,7 +278,7 @@
       "version": 139,
       "versionNonce": 525371653,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1746178732241,
       "link": null,
       "locked": false,
@@ -291,6 +291,385 @@
       "originalText": "https://medium.com/@noransaber685/simple-guide-to-creating-a-command-line-interface-cli-in-python-c2de7b8f5e05",
       "autoResize": false,
       "lineHeight": 1.25
+    },
+    {
+      "type": "ellipse",
+      "version": 1808,
+      "versionNonce": 661204718,
+      "isDeleted": false,
+      "id": "DoWGNpimmTOkooJ3i7DYI",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 1311.5440223922808,
+      "y": 83.7444875857193,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "width": 31.16299759889232,
+      "height": 28.682564228814755,
+      "seed": 421614706,
+      "groupIds": [
+        "E7jB7zQLRb6aTcFsllcH5"
+      ],
+      "boundElements": [],
+      "updated": 1746181051144,
+      "link": null,
+      "locked": false,
+      "index": "aI",
+      "frameId": null,
+      "roundness": null
+    },
+    {
+      "type": "line",
+      "version": 1872,
+      "versionNonce": 478224686,
+      "isDeleted": false,
+      "id": "8WAPeZgk-tu-Lcnl4fTeW",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 1325.3919668547019,
+      "y": 112.43506451208461,
+      "strokeColor": "#000000",
+      "backgroundColor": "#ced4da",
+      "width": 1.5291142187301872,
+      "height": 34.7727576915817,
+      "seed": 1788999218,
+      "groupIds": [
+        "E7jB7zQLRb6aTcFsllcH5"
+      ],
+      "boundElements": [],
+      "updated": 1746181051144,
+      "link": null,
+      "locked": false,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -1.5291142187301872,
+          34.7727576915817
+        ]
+      ],
+      "index": "aJ",
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "startBinding": null,
+      "endBinding": null
+    },
+    {
+      "type": "line",
+      "version": 1825,
+      "versionNonce": 107006830,
+      "isDeleted": false,
+      "id": "0gFN989CO0i4NcYYjC0NJ",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 1324.0775176030152,
+      "y": 147.96910347015847,
+      "strokeColor": "#000000",
+      "backgroundColor": "#ced4da",
+      "width": 13.76494612547759,
+      "height": 21.2062462357103,
+      "seed": 254304242,
+      "groupIds": [
+        "E7jB7zQLRb6aTcFsllcH5"
+      ],
+      "boundElements": [],
+      "updated": 1746181051144,
+      "link": null,
+      "locked": false,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          13.76494612547759,
+          21.2062462357103
+        ]
+      ],
+      "index": "aK",
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "startBinding": null,
+      "endBinding": null
+    },
+    {
+      "type": "line",
+      "version": 1839,
+      "versionNonce": 1666264494,
+      "isDeleted": false,
+      "id": "DrHZUPldq_ye0vcxCgXVm",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 1323.9948403973042,
+      "y": 147.02613027994204,
+      "strokeColor": "#000000",
+      "backgroundColor": "#ced4da",
+      "width": 13.718372645163583,
+      "height": 19.04122535190188,
+      "seed": 851153330,
+      "groupIds": [
+        "E7jB7zQLRb6aTcFsllcH5"
+      ],
+      "boundElements": [],
+      "updated": 1746181051144,
+      "link": null,
+      "locked": false,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -13.718372645163583,
+          19.04122535190188
+        ]
+      ],
+      "index": "aL",
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "startBinding": null,
+      "endBinding": null
+    },
+    {
+      "type": "line",
+      "version": 1812,
+      "versionNonce": 8079342,
+      "isDeleted": false,
+      "id": "J21OwbDqxeFiKRybftg_J",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 1312.079229812714,
+      "y": 119.02487176567124,
+      "strokeColor": "#000000",
+      "backgroundColor": "#ced4da",
+      "width": 11.704580044116037,
+      "height": 12.174802152145906,
+      "seed": 1753385842,
+      "groupIds": [
+        "E7jB7zQLRb6aTcFsllcH5"
+      ],
+      "boundElements": [],
+      "updated": 1746181051144,
+      "link": null,
+      "locked": false,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          11.704580044116037,
+          12.174802152145906
+        ]
+      ],
+      "index": "aM",
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "startBinding": null,
+      "endBinding": null
+    },
+    {
+      "type": "line",
+      "version": 1842,
+      "versionNonce": 1643343918,
+      "isDeleted": false,
+      "id": "6nVPlCoeYyBzB0WviaB3l",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 1324.8133775413878,
+      "y": 131.29199147776654,
+      "strokeColor": "#000000",
+      "backgroundColor": "#ced4da",
+      "width": 20.918696618336334,
+      "height": 10.512386573622294,
+      "seed": 1187269938,
+      "groupIds": [
+        "E7jB7zQLRb6aTcFsllcH5"
+      ],
+      "boundElements": [],
+      "updated": 1746181058922,
+      "link": null,
+      "locked": false,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          20.918696618336334,
+          -10.512386573622294
+        ]
+      ],
+      "index": "aN",
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "startBinding": null,
+      "endBinding": null
+    },
+    {
+      "type": "line",
+      "version": 1819,
+      "versionNonce": 310420590,
+      "isDeleted": false,
+      "id": "YdSy-fPH_wtHpp11PtE4A",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 1306.4574262108615,
+      "y": 86.25952426505444,
+      "strokeColor": "#000000",
+      "backgroundColor": "transparent",
+      "width": 44.773963011027334,
+      "height": 9.109232409717546,
+      "seed": 48748274,
+      "groupIds": [
+        "E7jB7zQLRb6aTcFsllcH5"
+      ],
+      "boundElements": [],
+      "updated": 1746181051144,
+      "link": null,
+      "locked": false,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          44.773963011027334,
+          9.109232409717546
+        ]
+      ],
+      "index": "aO",
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "startBinding": null,
+      "endBinding": null
+    },
+    {
+      "type": "rectangle",
+      "version": 2126,
+      "versionNonce": 1879959214,
+      "isDeleted": false,
+      "id": "qSb78Dz59-7HeV5pr9-R3",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0.1875122815022081,
+      "x": 1316.469127560716,
+      "y": 80.2989271249233,
+      "strokeColor": "#000000",
+      "backgroundColor": "#fff",
+      "width": 26.798280362551274,
+      "height": 9.244201312513253,
+      "seed": 225716402,
+      "groupIds": [
+        "E7jB7zQLRb6aTcFsllcH5"
+      ],
+      "boundElements": [],
+      "updated": 1746181051144,
+      "link": null,
+      "locked": false,
+      "index": "aP",
+      "frameId": null,
+      "roundness": null
+    },
+    {
+      "id": "EHKr5wU-mop6SXS0qjmFG",
+      "type": "text",
+      "x": 1053.5927579365075,
+      "y": 216.7261904761903,
+      "width": 705.7142857142861,
+      "height": 864,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "aQ",
+      "roundness": null,
+      "seed": 1031613042,
+      "version": 1098,
+      "versionNonce": 1819183730,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1746182923271,
+      "link": null,
+      "locked": false,
+      "text": "Pasos a seguir:\n- Crear el CLI y permitir que los usuarios puedan introducir comandos,\ndependiendo del comando que introduzca se llamará a su respectivo método\nde la clase Task o de la clase CLI en el caso de ser un comando de ayuda al\nusuario. Los comandos que se pueden usar son:\n\n    # Obtener ayuda\n    - help. Para mostrar los comandos disponibles\n    - comandos. Para mostrar los comandos disponibles, su funcionamiento y\nejemplo de uso\n\n    # Adding a new task\n    task-cli add \"Buy groceries\"\n    # Output: Task added successfully (ID: 1)\n    \n    # Updating and deleting tasks\n    task-cli update 1 \"Buy groceries and cook dinner\"\n    task-cli delete 1\n    \n    # Marking a task as in progress or done\n    task-cli mark-in-progress 1\n    task-cli mark-done 1\n    \n    # Listing all tasks\n    task-cli list\n    \n    # Listing tasks by status\n    task-cli list done\n    task-cli list todo\n    task-cli list in-progress\n\n- Crear la clase Task con los atributos y métodos necesarios para el CRUD",
+      "fontSize": 20,
+      "fontFamily": 6,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Pasos a seguir:\n- Crear el CLI y permitir que los usuarios puedan introducir comandos, dependiendo del comando que introduzca se llamará a su respectivo método de la clase Task o de la clase CLI en el caso de ser un comando de ayuda al usuario. Los comandos que se pueden usar son:\n\n    # Obtener ayuda\n    - help. Para mostrar los comandos disponibles\n    - comandos. Para mostrar los comandos disponibles, su funcionamiento y ejemplo de uso\n\n    # Adding a new task\n    task-cli add \"Buy groceries\"\n    # Output: Task added successfully (ID: 1)\n    \n    # Updating and deleting tasks\n    task-cli update 1 \"Buy groceries and cook dinner\"\n    task-cli delete 1\n    \n    # Marking a task as in progress or done\n    task-cli mark-in-progress 1\n    task-cli mark-done 1\n    \n    # Listing all tasks\n    task-cli list\n    \n    # Listing tasks by status\n    task-cli list done\n    task-cli list todo\n    task-cli list in-progress\n\n- Crear la clase Task con los atributos y métodos necesarios para el CRUD",
+      "autoResize": false,
+      "lineHeight": 1.35
     }
   ],
   "appState": {

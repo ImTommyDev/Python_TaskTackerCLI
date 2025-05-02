@@ -1,9 +1,56 @@
 import cmd
+import os
+import time
 
 #Clase que contendrá las funcionalidades de la CLI
 class CLI(cmd.Cmd):
     prompt = 'CLI > '  # Aqui estoy definiendo el prompt de la CLI, esto sirve para que el usuario sepa que puede escribir un comando
-    intro = 'Bienvenido a la CLI. Escribe help o ? para listar los comandos disponibles.'  # Mensaje inicial
+    intro = 'Bienvenido a la CLI. Escribe help o ? para listar los comandos disponibles'  # Mensaje inicial
+    
+    #Definir comando saludo en el que el usuario puede escribir su nombre y la CLI le responderá con un saludo.
+    def do_saludo(self, nombre):
+        """Saluda al usuario con su nombre."""
+        if nombre:
+            print(f'Hola, {nombre}!')
+        else:
+            print('Hola! Por favor, escribe tu nombre.')
+    
+    def do_exit(self, line):
+        """Sale de la CLI."""
+        print('Saliendo de la CLI...')
+        
+        time.sleep(0.5)
+        return True
+        
+    #Creación de un comando para mostrar al usuario el comando | para que sirve | ejemplo de como usarlo
+    def do_comandos(self, line):
+        """Muestra información sobre todos los comandos."""
+        #TODO: Actualizar la documentación de todos los comandos
+        comandos = {
+            'help / ?': {
+                'descripcion': 'Muestra todos los comandos.',
+                'ejemplo-uso': 'help'
+            },
+            'comandos': {
+                'descripcion': 'Muestra información sobre todos los comandos.',
+                'ejemplo-uso': 'comandos'
+            },
+            'saludo': {
+                'descripcion': 'Saluda al usuario con su nombre.',
+                'ejemplo-uso': 'saludo <nombre>'
+            },
+            'exit': {
+                'descripcion': 'Sale de la CLI.',
+                'ejemplo-uso': 'exit'
+            }
+        }
+        
+        for comando, info in comandos.items():
+            print("-"*50)
+            print(f"""Comando: {comando}
+Descripcion: {info['descripcion']}
+Ejemplo de uso: {info['ejemplo-uso']}\n""")
+            
     
     
 # Para probar la CLI, creo una instancia de la clase CLI y llamo al método cmdloop(). 
