@@ -1,21 +1,24 @@
 import cmd
 import os
 import time
+from task import Task
 
 #Clase que contendrá las funcionalidades de la CLI
 class CLI(cmd.Cmd):
     prompt = 'CLI > '  # Aqui estoy definiendo el prompt de la CLI, esto sirve para que el usuario sepa que puede escribir un comando
     intro = 'Bienvenido a la CLI. Escribe help o ? para listar los comandos disponibles'  # Mensaje inicial
-    
-    #Definir comando saludo en el que el usuario puede escribir su nombre y la CLI le responderá con un saludo.
-    def do_saludo(self, nombre):
-        """Saluda al usuario con su nombre."""
-        if nombre:
-            print(f'Hola, {nombre}!')
+      
+    #Comando para añadir tareas, 
+    def do_add(self, descripcion):
+        """"Añade una tarea."""
+        task = Task()
+        
+        if task.add_task(descripcion):
+            print(f"Tarea añadida: {descripcion}")
         else:
-            print('Hola! Por favor, escribe tu nombre.')
+            print("Error al añadir la tarea.")
     
-    def do_exit(self, line):
+    def do_exit(self):
         """Sale de la CLI."""
         print('Saliendo de la CLI...')
         
@@ -35,13 +38,13 @@ class CLI(cmd.Cmd):
                 'descripcion': 'Muestra información sobre todos los comandos.',
                 'ejemplo-uso': 'comandos'
             },
-            'saludo': {
-                'descripcion': 'Saluda al usuario con su nombre.',
-                'ejemplo-uso': 'saludo <nombre>'
-            },
             'exit': {
                 'descripcion': 'Sale de la CLI.',
                 'ejemplo-uso': 'exit'
+            },
+            'add':{
+                'descripcion': 'Añade una tarea.',
+                'ejemplo-uso': 'add "Descripcion de la tarea"'
             }
         }
         

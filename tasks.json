@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "descripcion": "programar con python",
+        "estado": "pendiente",
+        "fecha_creacion": "2025-05-02 17:13:13",
+        "fecha_update": "2025-05-02 17:13:13"
+    },
+    {
+        "id": 2,
+        "descripcion": "conducir",
+        "estado": "pendiente",
+        "fecha_creacion": "2025-05-02 17:13:27",
+        "fecha_update": "2025-05-02 17:13:27"
+    }
+]
