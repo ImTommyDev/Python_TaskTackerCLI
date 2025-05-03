@@ -88,14 +88,40 @@ class Task():
                 
                 return True, self.id
             
-    #Función para listar todas las tareas en formato de tabla
-    def list_tasks():
-        with open(ARCHIVO , 'r') as archivo:
-            tareas = json.load(archivo)
-            #creo una tabla para mostrar las tareas
-            tabla = PrettyTable()
-            tabla.field_names = ["ID", "Descripcion", "Estado", "Fecha de Creación", "Fecha de Actualización"]
-            for tarea in tareas:
-                tabla.add_row([f"{tarea['id']}", f"{tarea['descripcion']}", f"{tarea['estado']}", f"{tarea['fecha_creacion']}", f"{tarea['fecha_update']}"])
+    #Función para listar tareas
+    def list_tasks(estado=None):
+        
+        #Si el estado que se le pasa es correcto, se listan las tareas con ese estado
+        #Paso el estado a minúsculas para evitar problemas de mayúsculas y minúsculas
+        estado = estado.lower() if estado else None
+        if estado and estado in ESTADOS:
+            with open(ARCHIVO , 'r') as archivo:
+                tareas = json.load(archivo)
                 
-            print(tabla)
+                tabla = PrettyTable()
+                tabla.field_names = ["ID", "Descripcion", "Estado", "Fecha de Creación", "Fecha de Actualización"]
+                
+                for tarea in tareas:
+                    if tarea['estado'] == estado:
+                        tabla.add_row([f"{tarea['id']}", f"{tarea['descripcion']}", f"{tarea['estado']}", f"{tarea['fecha_creacion']}", f"{tarea['fecha_update']}"])
+                        
+                if tabla.rowcount == 0:
+                    print(f"\n{' No hay tareas con el estado ' + estado + ' ':=^100}\n")
+                else:
+                    print(tabla)
+        #Si se le pasa un estado pero no es correcto, muestro un error
+        elif estado and estado not in ESTADOS:
+            print(f"El estado {estado} no existe. Los estados posibles son: {', '.join(ESTADOS)}")
+        #Si no se le pasa estado, se listan todas las tareas
+        else:
+            with open(ARCHIVO , 'r') as archivo:
+                tareas = json.load(archivo)
+                #creo una tabla para mostrar las tareas
+                tabla = PrettyTable()
+                tabla.field_names = ["ID", "Descripcion", "Estado", "Fecha de Creación", "Fecha de Actualización"]
+                for tarea in tareas:
+                    tabla.add_row([f"{tarea['id']}", f"{tarea['descripcion']}", f"{tarea['estado']}", f"{tarea['fecha_creacion']}", f"{tarea['fecha_update']}"])
+                    
+                print(tabla)
+            
+    

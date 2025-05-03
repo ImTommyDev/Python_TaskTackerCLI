@@ -16,31 +16,36 @@ class CLI(cmd.Cmd):
         comandos = {
             'help / ?': {
                 'descripcion': 'Muestra todos los comandos.',
-                'ejemplo-uso': 'help'
+                'ejemplo-uso': 'help',
+                'argumentos': 'Ninguno'
             },
             'comandos': {
                 'descripcion': 'Muestra información sobre todos los comandos.',
-                'ejemplo-uso': 'comandos'
+                'ejemplo-uso': 'comandos',
+                'argumentos': 'Ninguno'
             },
             'exit': {
                 'descripcion': 'Sale de la CLI.',
-                'ejemplo-uso': 'exit'
+                'ejemplo-uso': 'exit',
+                'argumentos': 'Ninguno'
             },
-            'add':{
+            'add <tarea>':{
                 'descripcion': 'Añade una tarea.',
-                'ejemplo-uso': 'add Descripcion de la tarea'
+                'ejemplo-uso': 'add Descripcion de la tarea',
+                'argumentos': 'Descripcion de la tarea'
             },
-            'list':{
-                'descripcion': 'Lista todas las tareas.',
-                'ejemplo-uso': 'list'
+            'list <estado>':{
+                'descripcion': 'Si no se especifica un estado, lista todas las tareas.',
+                'ejemplo-uso': 'list | list pendiente',
+                'argumentos': 'OPCIONAL: pendiente, en progreso, completada'
             },
         }
         
         #Voy a mostrar los comandos con una table
         tabla = PrettyTable()
-        tabla.field_names = ["Comando", "Descripción", "Ejemplo de uso"]
+        tabla.field_names = ["Comando", "Descripción", "Ejemplo de uso", "Argumentos"]
         for comando, info in comandos.items():
-            tabla.add_row([comando, info['descripcion'], info['ejemplo-uso']])
+            tabla.add_row([comando, info['descripcion'], info['ejemplo-uso'], info['argumentos']])
             
         print(tabla)
             
@@ -56,9 +61,17 @@ class CLI(cmd.Cmd):
         else:
             print("Error al añadir la tarea.")
     
-    def do_list(self, line):
-        """Lista todas las tares"""
-        Task.list_tasks()
+    def do_list(self, estado):
+        """Lista las tareas. Si no se especifica un estado, lista todas las tareas."""
+        
+        #Compruebo si se le ha pasado el estado o no, el resto de comprobaciones las haré en el métodod de la clase
+        if estado:
+            #Si se le pasa un estado, muestro solo las tareas con ese estado
+            Task.list_tasks(estado)
+            
+        else:
+            #Si no se especifica un estado, muestro todas las tareas
+            Task.list_tasks()
     
     def do_exit(self, line):
         """Sale de la CLI."""
