@@ -2,32 +2,14 @@ import cmd
 import os
 import time
 from task import Task
+from prettytable import PrettyTable
 
 #Clase que contendrá las funcionalidades de la CLI
 class CLI(cmd.Cmd):
     prompt = 'CLI > '  # Aqui estoy definiendo el prompt de la CLI, esto sirve para que el usuario sepa que puede escribir un comando
     intro = 'Bienvenido a la CLI. Escribe help o ? para listar los comandos disponibles'  # Mensaje inicial
       
-    #Comando para añadir tareas, 
-    def do_add(self, descripcion):
-        """"Añade una tarea."""
-        task = Task()
-        
-        creada, id = task.add_task(descripcion)
-        
-        if creada:
-            print(f"Tarea añadida: {descripcion} (ID: {id})")
-        else:
-            print("Error al añadir la tarea.")
-    
-    def do_exit(self):
-        """Sale de la CLI."""
-        print('Saliendo de la CLI...')
-        
-        time.sleep(0.5)
-        return True
-        
-    #Creación de un comando para mostrar al usuario el comando | para que sirve | ejemplo de como usarlo
+          #Creación de un comando para mostrar al usuario el comando | para que sirve | ejemplo de como usarlo
     def do_comandos(self, line):
         """Muestra información sobre todos los comandos."""
         #TODO: Actualizar la documentación de todos los comandos
@@ -46,15 +28,44 @@ class CLI(cmd.Cmd):
             },
             'add':{
                 'descripcion': 'Añade una tarea.',
-                'ejemplo-uso': 'add "Descripcion de la tarea"'
-            }
+                'ejemplo-uso': 'add Descripcion de la tarea'
+            },
+            'list':{
+                'descripcion': 'Lista todas las tareas.',
+                'ejemplo-uso': 'list'
+            },
         }
         
+        #Voy a mostrar los comandos con una table
+        tabla = PrettyTable()
+        tabla.field_names = ["Comando", "Descripción", "Ejemplo de uso"]
         for comando, info in comandos.items():
-            print("-"*50)
-            print(f"""Comando: {comando}
-Descripcion: {info['descripcion']}
-Ejemplo de uso: {info['ejemplo-uso']}\n""")
+            tabla.add_row([comando, info['descripcion'], info['ejemplo-uso']])
+            
+        print(tabla)
+            
+    #Comando para añadir tareas, 
+    def do_add(self, descripcion):
+        """"Añade una tarea."""
+        task = Task()
+        
+        creada, id = task.add_task(descripcion)
+        
+        if creada:
+            print(f"Tarea añadida: {descripcion} (ID: {id})")
+        else:
+            print("Error al añadir la tarea.")
+    
+    def do_list(self, line):
+        """Lista todas las tares"""
+        Task.list_tasks()
+    
+    def do_exit(self, line):
+        """Sale de la CLI."""
+        print('Saliendo de la CLI...')
+        
+        time.sleep(0.5)
+        return True
             
     
     

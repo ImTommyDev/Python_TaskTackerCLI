@@ -1,6 +1,7 @@
 import os
 import json
 from datetime import datetime
+from prettytable import PrettyTable
 
 ESTADOS = ["pendiente", "en progreso", "completada"]  # Lista de estados posibles para las tareas
 ARCHIVO = 'tasks.json'  # Nombre del archivo JSON donde se guardarán las tareas
@@ -86,3 +87,15 @@ class Task():
                 json.dump([tarea], archivo, indent=4) #dump convierte el diccionario en un objeto JSON y lo guarda en el archivo .json
                 
                 return True, self.id
+            
+    #Función para listar todas las tareas en formato de tabla
+    def list_tasks():
+        with open(ARCHIVO , 'r') as archivo:
+            tareas = json.load(archivo)
+            #creo una tabla para mostrar las tareas
+            tabla = PrettyTable()
+            tabla.field_names = ["ID", "Descripcion", "Estado", "Fecha de Creación", "Fecha de Actualización"]
+            for tarea in tareas:
+                tabla.add_row([f"{tarea['id']}", f"{tarea['descripcion']}", f"{tarea['estado']}", f"{tarea['fecha_creacion']}", f"{tarea['fecha_update']}"])
+                
+            print(tabla)

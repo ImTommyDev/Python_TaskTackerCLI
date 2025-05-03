@@ -19,5 +19,12 @@
         "estado": "pendiente",
         "fecha_creacion": "2025-05-02 17:20:47",
         "fecha_update": "2025-05-02 17:20:47"
+    },
+    {
+        "id": 4,
+        "descripcion": "cocinar comida",
+        "estado": "pendiente",
+        "fecha_creacion": "2025-05-03 12:57:33",
+        "fecha_update": "2025-05-03 12:57:33"
     }
 ]
