@@ -7,20 +7,6 @@
         "fecha_update": "2025-05-02 17:13:13"
     },
     {
-        "id": 2,
-        "descripcion": "conducir",
-        "estado": "pendiente",
-        "fecha_creacion": "2025-05-02 17:13:27",
-        "fecha_update": "2025-05-02 17:13:27"
-    },
-    {
-        "id": 3,
-        "descripcion": "hacer la cena",
-        "estado": "pendiente",
-        "fecha_creacion": "2025-05-02 17:20:47",
-        "fecha_update": "2025-05-02 17:20:47"
-    },
-    {
         "id": 4,
         "descripcion": "cocinar comida",
         "estado": "pendiente",

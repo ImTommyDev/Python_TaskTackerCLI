@@ -124,4 +124,37 @@ class Task():
                     
                 print(tabla)
             
-    
+    def delete_task(id):
+        #Elimino una tarea a través de su ID
+        try:
+            with open(ARCHIVO, 'r+') as archivo:
+                tareas = json.load(archivo)
+                eliminada = False
+                #Busco la tarea con el id 
+                
+                for tarea in tareas:
+                    if tarea['id'] == int(id):
+                        #Borro la tarea de la lista de tareas
+                        tareas.remove(tarea)
+                        
+                        #Vuelvo a escribir el archivo .json sin la tarea eliminada
+                        archivo.seek(0)
+                        json.dump(tareas, archivo, indent=4)
+                        archivo.truncate()
+                        eliminada = True
+                    
+                if not eliminada:
+                    print(f"No se encontró la tarea con el ID {id}.")
+                    return False    
+                else:
+                    return True
+                
+        except FileNotFoundError:
+            print("El archivo de tareas no existe.")
+            return False
+        except json.JSONDecodeError:
+            print("Error al leer el archivo de tareas.")
+            return False
+        except Exception as ex:
+            print(f"Error al eliminar la tarea con el ID {id}: {ex}")
+            return False

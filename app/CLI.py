@@ -39,6 +39,11 @@ class CLI(cmd.Cmd):
                 'ejemplo-uso': 'list | list pendiente',
                 'argumentos': 'OPCIONAL: pendiente, en progreso, completada'
             },
+            'delete <id>':{
+                'descripcion': 'Eliminar una tarea a través de su ID',
+                'ejemplo-uso': 'delete 1',
+                'argumentos': 'ID de la tarea'
+            }
         }
         
         #Voy a mostrar los comandos con una table
@@ -72,6 +77,13 @@ class CLI(cmd.Cmd):
         else:
             #Si no se especifica un estado, muestro todas las tareas
             Task.list_tasks()
+            
+    def do_delete(self,id):
+        """Eliminar una tarea a través de su ID"""
+        if Task.delete_task(id):
+            print(f"Tarea con ID {id} eliminada.")
+        
+        
     
     def do_exit(self, line):
         """Sale de la CLI."""
