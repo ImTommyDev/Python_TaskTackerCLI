@@ -48,6 +48,11 @@ class CLI(cmd.Cmd):
                 'descripcion': 'Actualizar una tarea a través de su ID',
                 'ejemplo-uso': 'update 1 Descripcion actualizada',
                 'argumentos': 'ID de la tarea y nueva descripcion'
+            },
+            'mark <id> <estado>':{
+                'descripcion': 'Marca una tarea como en progreso o completada.',
+                'ejemplo-uso': 'mark 1 en progreso | mark 1 completada',
+                'argumentos': 'ID de la tarea y estado (en progreso o completada)'
             }
         }
         
@@ -98,7 +103,20 @@ class CLI(cmd.Cmd):
         else:
             print(f"Tarea con ID {id} no encontrada.")
 
-    
+    def do_mark(self, arg):
+        """Marca una tarea como pendiente, en progreso, completada."""
+        id_str, estado = arg.split(" ", 1)
+        id = int(id_str)
+        
+        if estado == "en progreso":
+            Task.update_estado(id, "en progreso")
+            print(f"Tarea con ID {id} marcada como en progreso.")
+        elif estado == "completada":
+            Task.update_estado(id, "completada")
+            print(f"Tarea con ID {id} marcada como completada.")
+        else:
+            print("Estado no válido. Usa 'en progreso' o 'completada'.")
+
     def do_exit(self, line):
         """Sale de la CLI."""
         print('Saliendo de la CLI...')

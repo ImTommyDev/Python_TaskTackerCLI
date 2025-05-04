@@ -87,7 +87,7 @@ class Task():
                 json.dump([tarea], archivo, indent=4) #dump convierte el diccionario en un objeto JSON y lo guarda en el archivo .json
                 
                 return True, self.id
-            
+    
     #Función para listar tareas
     def list_tasks(estado=None):
         
@@ -123,7 +123,8 @@ class Task():
                     tabla.add_row([f"{tarea['id']}", f"{tarea['descripcion']}", f"{tarea['estado']}", f"{tarea['fecha_creacion']}", f"{tarea['fecha_update']}"])
                     
                 print(tabla)
-            
+    
+    #Función para eliminar tareas        
     def delete_task(id):
         #Elimino una tarea a través de su ID
         try:
@@ -159,6 +160,7 @@ class Task():
             print(f"Error al eliminar la tarea con el ID {id}: {ex}")
             return False
         
+    #Función para actualizar tareas
     def update_task(id, descripcion):
         #Compruebo si se han pasado los argumentos necesarios
         if not id or not descripcion:
@@ -197,3 +199,44 @@ class Task():
                 print(f"Error al actualizar la tarea con el ID {id}: {ex}")
                 return False
             
+    #Función para updatear el estado de una tarea
+    def update_estado(id, estado):
+        #Compruebo si se han pasado los argumentos necesarios
+        if not id or not estado:
+            print("Se necesita un ID y un estado para actualizar la tarea.")
+            return False
+        else:
+            try:
+                with open(ARCHIVO, 'r+') as archivo:
+                    tareas = json.load(archivo)
+                    tarea_encontrada = False
+                    
+                    for tarea in tareas:
+                        if tarea['id'] == int(id):
+                            if estado not in ESTADOS:
+                                print(f"El estado {estado} no es válido. Los estados posibles son: {', '.join(ESTADOS)}")
+                                return False
+                            tarea['estado'] = estado
+                            tarea['fecha_update'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                            tarea_encontrada = True
+                            
+                            #Vuelvo a escribir el archivo .json con la tarea actualizada
+                            archivo.seek(0)
+                            json.dump(tareas, archivo, indent=4)
+                            archivo.truncate()
+                            
+                    if not tarea_encontrada:
+                        return False
+                    else:
+                        return True
+
+                
+            except FileNotFoundError:
+                print("El archivo de tareas no existe.")
+                return False
+            except json.JSONDecodeError:
+                print("Error al leer el archivo de tareas.")
+                return False
+            except Exception as ex:
+                print(f"Error al actualizar la tarea con el ID {id}: {ex}")
+                return False
