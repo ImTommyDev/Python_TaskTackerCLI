@@ -28,3 +28,7 @@
    ```bash
    python app/CLI.py
 2. Ejecuta el comando help para ver todos los comandos disponibles y prueba la aplicación
+
+## Roadmap sh
+Este proyecto es el primer reto de backend de roadmap sh, os animo a todos a que lo practiqueis por vuestra cuenta.
+Enlace al proyecto -> https://roadmap.sh/projects/task-tracker
