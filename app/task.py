@@ -158,3 +158,42 @@ class Task():
         except Exception as ex:
             print(f"Error al eliminar la tarea con el ID {id}: {ex}")
             return False
+        
+    def update_task(id, descripcion):
+        #Compruebo si se han pasado los argumentos necesarios
+        if not id or not descripcion:
+            print("Se necesita un ID y una descripción para actualizar la tarea.")
+            return False
+        else:
+            try:
+                with open(ARCHIVO, 'r+') as archivo:
+                    tareas = json.load(archivo)
+                    tarea_encontrada = False
+                    
+                    for tarea in tareas:
+                        if tarea['id'] == int(id):
+                            tarea['descripcion'] = descripcion
+                            tarea['fecha_update'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                            tarea_encontrada = True
+                            
+                            #Vuelvo a escribir el archivo .json con la tarea actualizada
+                            archivo.seek(0)
+                            json.dump(tareas, archivo, indent=4)
+                            archivo.truncate()
+                            
+                    if not tarea_encontrada:
+                        return False
+                    else:
+                        return True
+
+                
+            except FileNotFoundError:
+                print("El archivo de tareas no existe.")
+                return False
+            except json.JSONDecodeError:
+                print("Error al leer el archivo de tareas.")
+                return False
+            except Exception as ex:
+                print(f"Error al actualizar la tarea con el ID {id}: {ex}")
+                return False
+            

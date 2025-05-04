@@ -43,6 +43,11 @@ class CLI(cmd.Cmd):
                 'descripcion': 'Eliminar una tarea a través de su ID',
                 'ejemplo-uso': 'delete 1',
                 'argumentos': 'ID de la tarea'
+            },
+            'update <id> <descripcion>':{
+                'descripcion': 'Actualizar una tarea a través de su ID',
+                'ejemplo-uso': 'update 1 Descripcion actualizada',
+                'argumentos': 'ID de la tarea y nueva descripcion'
             }
         }
         
@@ -83,7 +88,16 @@ class CLI(cmd.Cmd):
         if Task.delete_task(id):
             print(f"Tarea con ID {id} eliminada.")
         
+    def do_update(self, arg):
+        """Actualizar una tarea a través de su ID y descripción"""
+        id_str, descripcion = arg.split(" ", 1)
+        id = int(id_str)
         
+        if Task.update_task(id, descripcion):
+            print(f"Tarea con ID {id} actualizada.")
+        else:
+            print(f"Tarea con ID {id} no encontrada.")
+
     
     def do_exit(self, line):
         """Sale de la CLI."""
